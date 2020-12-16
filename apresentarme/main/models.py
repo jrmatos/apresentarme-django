@@ -19,12 +19,12 @@ class Ingredient(models.Model):
 class Card(models.Model):
     url = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
-    bio = models.TextField(max_length=300)
-    phone = models.CharField(max_length=100)
-    photoUrl = models.CharField(max_length=100)
-    instagramUrl = models.CharField(max_length=100)
-    facebookUrl = models.CharField(max_length=100)
-    youtubeUrl = models.CharField(max_length=100)
+    bio = models.TextField(max_length=300, blank=True)
+    phone = models.CharField(max_length=100, blank=True)
+    photoUrl = models.CharField(max_length=100, blank=True)
+    instagramUrl = models.CharField(max_length=100, blank=True)
+    facebookUrl = models.CharField(max_length=100, blank=True)
+    youtubeUrl = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.url
