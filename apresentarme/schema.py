@@ -18,6 +18,33 @@ class CardType(DjangoObjectType):
         model = Card
         fields = "__all__"
 
+class CreateCardInput(graphene.InputObjectType):
+    url = graphene.String(required=True)
+    name = graphene.String(required=True)
+    bio = graphene.String(required=True)
+    facebook_url = graphene.String(required=True)
+
+class CreateCard(graphene.Mutation):
+    class Arguments:
+        card_data = CreateCardInput(required=True)
+
+    card = graphene.Field(CardType)
+
+    def mutate(self, root, card_data=None):
+        card = Card(
+            url=card_data.url,
+            name=card_data.name,
+            bio=card_data.bio,
+            facebook_url=card_data.facebook_url
+        )
+    
+        card.save()
+        # Notice we return an instance of this mutation
+        return CreateCard(card=card)
+
+
+class Mutation(graphene.ObjectType):
+    create_card = CreateCard.Field()
 
 class Query(graphene.ObjectType):
     all_ingredients = graphene.List(IngredientType)
@@ -37,4 +64,4 @@ class Query(graphene.ObjectType):
         return Card.objects.all()
 
 
-schema = graphene.Schema(query=Query)
+schema = graphene.Schema(query=Query, mutation=Mutation)

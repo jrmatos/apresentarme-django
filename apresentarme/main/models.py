@@ -21,10 +21,10 @@ class Card(models.Model):
     name = models.CharField(max_length=100)
     bio = models.TextField(max_length=300, blank=True)
     phone = models.CharField(max_length=100, blank=True)
-    photoUrl = models.CharField(max_length=100, blank=True)
-    instagramUrl = models.CharField(max_length=100, blank=True)
-    facebookUrl = models.CharField(max_length=100, blank=True)
-    youtubeUrl = models.CharField(max_length=100, blank=True)
+    photo_url = models.CharField(max_length=100, blank=True)
+    instagram_url = models.CharField(max_length=100, blank=True)
+    facebook_url = models.CharField(max_length=100, blank=True)
+    youtube_url = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.url
