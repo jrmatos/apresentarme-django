@@ -1,20 +1,15 @@
-#  url: {
-#             type: String,
-#             required: true,
-#         },
-#         bio: {
-#             type: String,
-#             required: false,
-#         },
-#         photoUrl: {
-#             type: String
-#         },
-#         instagramUrl: {
-#             type: String
-#         },
-#         facebookUrl: {
-#             type: String
-#         },
-#         youtubeUrl: {
-#             type: String
-#         },
+import graphene
+from apresentarme.main.models import Card
+from graphene_django import DjangoObjectType
+
+
+class CardType(DjangoObjectType):
+    class Meta:
+        model = Card
+        fields = "__all__"
+
+class CreateCardInput(graphene.InputObjectType):
+    url = graphene.String(required=True)
+    name = graphene.String(required=True)
+    bio = graphene.String(required=True)
+    facebook_url = graphene.String(required=True)
