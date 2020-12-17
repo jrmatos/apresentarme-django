@@ -12,5 +12,19 @@
             "facebook_url": "fb.com/gil",
             "youtube_url": "youtube.com/gil"
         }   
+    },
+    {
+        "model": "main.card",
+        "pk": 2,
+        "fields": {
+            "url": "advogadacris",
+            "name": "Advogada Cris",
+            "bio": "Sou advogada",
+            "phone": "98145-1254",
+            "photo_url": "some.url/foto2.jpeg",
+            "instagram_url": "instagram.com/cris",
+            "facebook_url": "fb.com/cris",
+            "youtube_url": "youtube.com/cris"
+        }   
     }
 ]
