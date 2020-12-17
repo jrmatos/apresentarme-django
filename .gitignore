@@ -1,5 +1,10 @@
 env
 db.sqlite3
 
- __pycache__/
- *.pyc
+*.pyc
+
+__pycache__/
+apresentarme/__pycache__/
+apresentarme/graphql/__pycache__/
+apresentarme/main/__pycache__/
+apresentarme/main/migrations/__pycache__/
