@@ -17,7 +17,7 @@ class Ingredient(models.Model):
         return self.name
 
 class Card(models.Model):
-    url = models.CharField(max_length=100)
+    url = models.CharField(max_length=100, unique=True)
     name = models.CharField(max_length=100)
     bio = models.TextField(max_length=300, blank=True)
     phone = models.CharField(max_length=100, blank=True)

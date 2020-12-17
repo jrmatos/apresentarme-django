@@ -39,7 +39,7 @@ class CreateCard(graphene.Mutation):
         )
     
         card.save()
-        # Notice we return an instance of this mutation
+        
         return CreateCard(card=card)
 
 
